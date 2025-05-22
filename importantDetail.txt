@@ -1,0 +1,18 @@
+Exercises API: https://api-ninjas.com/api/exercises
+Use IBM StepZen to create a GraphQL API: https://bit.ly/3RZtGNM
+
+
+https://docs.expo.dev/router/installation/
+color-> https://reactnative.dev/docs/colors
+shadow-> https://ethercreative.github.io/react-native-shadow-generator/
+
+
+
+20250521-0938-5027-40a3-e058654f9881
+
+name-> gemmhagen
+Admin Key-> gemmhagen::local.io+1000::ebe7fee20247b843f2611ebfc620809ecb80824829bae56cc9e054d24f2ca0c2
+
+stepzen login us-east-a.ibm.stepzen.net -a gemmhagen -k ebe7fee20247b843f2611ebfc620809ecb80824829bae56cc9e054d24f2ca0c2
+
+gemmhagen ebe7fee20247b843f2611ebfc620809ecb80824829bae56cc9e054d24f2ca0c2
