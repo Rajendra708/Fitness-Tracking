@@ -13,6 +13,14 @@
         "muscle":"biceps",
         "equipment":"barbell",
         "difficulty":"beginner",
-        "instructions":"Stand up with your torso upright while holiday balablabla bla bla bla"
+        "instructions":"Stand up with your torso upright while holiday balablabla bla"
+    },
+     {
+        "name":"Wid-grip barbell curl",
+        "type": "strength",
+        "muscle":"biceps",
+        "equipment":"barbell",
+        "difficulty":"beginner",
+        "instructions":"Stand up with your torso upright while holiday balablabla bla"
     }
 ]
