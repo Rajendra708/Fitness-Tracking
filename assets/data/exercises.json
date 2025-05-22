@@ -1,0 +1,18 @@
+[
+    {
+        "name":"Incline Hammer Curls",
+        "type": "strength",
+        "muscle":"biceps",
+        "equipment":"dumbbell",
+        "difficulty":"beginner",
+        "instructions":"Seat yourself on an incline bench with a dumbbell"
+    },
+    {
+        "name":"Wid-grip barbell curl",
+        "type": "strength",
+        "muscle":"biceps",
+        "equipment":"barbell",
+        "difficulty":"beginner",
+        "instructions":"Stand up with your torso upright while holiday balablabla bla bla bla"
+    }
+]
