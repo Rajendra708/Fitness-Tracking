@@ -1,13 +1,41 @@
 import {View , Text, StyleSheet, ScrollView} from 'react-native';
 import { Stack, useLocalSearchParams } from 'expo-router';
 import {useState} from 'react';
-// @ts-ignore
-import exercises from '../../assets/data/exercises.json';
+ // @ts-ignore
 
-export  default function ExerciseDetailScreen(){
-    const params = useLocalSearchParams();
+import exercises from '../../assets/data/exercises.json';
+import {gql} from 'graphql-request';
+import {QueryClient, useQuery} from '@tanstack/react-query';
+import graphqlClient  from './graphqlClient';
+import { ActivityIndicator } from 'react-native-web';
+
+const exercisesQuery = gql`
+  Query exercises(name:string){
+    exercises(name: $name){
+      name
+      muscle
+      instructions
+      equipment
+    }
+ }`;
+
+export  default function ExerciseDetailScreen(){ 
+    // const params = useLocalSearchParams();  This is for mock data
+    const { name } = useLocalSearchParams();
+    const { data,isLoading, error } = useQuery({
+      queryKey:['exercises', name],
+      queryFn:()=> graphqlClient.request(exercisesQuery, { name })
+    })
     const [isInstructionExpanded, setIsInstructionExpanded] = useState(false);
-    const exercise = exercises.find(item=>item.name === params.name)
+    
+    if(isLoading){
+      return <ActivityIndicator/>;
+    }
+    if(error){
+      return <Text>Failed to fetch data</Text>;
+    }
+    // const exercise = exercises.find(item=>item.name === params.name)    This is for mock data
+    const exercise = data.exercises[0];
     if(!exercise) {
         return <Text> Exercise not found </Text>;
     }

@@ -10,9 +10,19 @@ shadow-> https://ethercreative.github.io/react-native-shadow-generator/
 
 20250521-0938-5027-40a3-e058654f9881
 
+stepzen login
 name-> gemmhagen
 Admin Key-> gemmhagen::local.io+1000::ebe7fee20247b843f2611ebfc620809ecb80824829bae56cc9e054d24f2ca0c2
+Api Key -> gemmhagen::local.net+1000::6528673590793c59b02e86775b13ed52bf55724191dbef02f23fa243993fc088
+
+
+stepzen import curl https://api.api-ninjas.com/v1/exercises\muscle=chest -H "X-Api-Key: YN7teDdXB/8cBE3Sh4mUyQ==BUOZvrPlKjyBrP0h"
+
+For query use tanStack
+https://tanstack.com/query/latest/docs/framework/react/graphql
 
 stepzen login us-east-a.ibm.stepzen.net -a gemmhagen -k ebe7fee20247b843f2611ebfc620809ecb80824829bae56cc9e054d24f2ca0c2
 
-gemmhagen ebe7fee20247b843f2611ebfc620809ecb80824829bae56cc9e054d24f2ca0c2
+
+
+
