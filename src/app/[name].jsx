@@ -3,11 +3,13 @@ import { Stack, useLocalSearchParams } from 'expo-router';
 import {useState} from 'react';
  // @ts-ignore
 
-import exercises from '../../assets/data/exercises.json';
+// import exercises from '../../assets/data/exercises.json'; this is for mock
 import {gql} from 'graphql-request';
 import {QueryClient, useQuery} from '@tanstack/react-query';
 import graphqlClient  from './graphqlClient';
 import { ActivityIndicator } from 'react-native-web';
+import NewSteInput from '../components/newSetInput';
+
 
 const exercisesQuery = gql`
   Query exercises(name:string){
@@ -20,7 +22,7 @@ const exercisesQuery = gql`
  }`;
 
 export  default function ExerciseDetailScreen(){ 
-    // const params = useLocalSearchParams();  This is for mock data
+    // const params = useLocalSearchParams();  // This is for mock data
     const { name } = useLocalSearchParams();
     const { data,isLoading, error } = useQuery({
       queryKey:['exercises', name],
@@ -34,7 +36,7 @@ export  default function ExerciseDetailScreen(){
     if(error){
       return <Text>Failed to fetch data</Text>;
     }
-    // const exercise = exercises.find(item=>item.name === params.name)    This is for mock data
+    // const exercise = exercises.find(item=>item.name === params.name)    // This is for mock data
     const exercise = data.exercises[0];
     if(!exercise) {
         return <Text> Exercise not found </Text>;
@@ -54,7 +56,7 @@ export  default function ExerciseDetailScreen(){
             <Text style={styles.instruction} numberOfLines={isInstructionExpanded ? 0 : 3}>{exercise.instructions}</Text>
             <Text onPress={()=>setIsInstructionExpanded(!isInstructionExpanded)} style={styles.seeMore}>{isInstructionExpanded ? 'See less' : 'See more'}</Text>
           </View>
-
+          <NewSteInput />
         </ScrollView>
     )
 }

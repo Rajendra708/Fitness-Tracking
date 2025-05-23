@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,FlatList, ActivityIndicator } from 'react-native';
 // @ts-ignore
-// import exercises from '../../assets/data/exercises.json'; for the mock data
+import exercises from '../../assets/data/exercises.json';  // for the mock data
 import ExerciseListItem from '../components/ExerciseListItem';
 import { useQuery } from '@tanstack/react-query';
 import { gql } from 'graphql-request';
@@ -28,12 +28,11 @@ if(isLoading){
 if(error){
   return <Text>Failed to fetch exercises</Text>
 }
-
-//  const exercise = exercises[0]; for the mock data
+//  const exercise = exercises[0]; // for the mock data
   return (
     <View style={styles.container}>
       <FlatList 
-        data={data?.exercises} // {exercise}  For the mock data
+        data= {data?.exercises} // {exercises}  For the mock data  
         contentContainerStyle={{gap:5}}
         keyExtractor={(item , index)=> item.name + index}
         renderItem={({item, index})=> <ExerciseListItem  item={item} />} 
